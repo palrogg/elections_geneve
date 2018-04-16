@@ -1,0 +1,208 @@
+/* BAR GRAPH */
+.EAG { fill: #660c0c } /*ENSEMBLE À GAUCHE*/
+.VERT { fill: #04aa04 } /*LES VERTS*/
+.SOC { fill: #d65050 } /*LES SOCIALISTES*/
+.PLR { fill: #3860f5 } /*LIBÉRAUX-RADICAUX*/
+.PDC { fill: #d66306 } /*DÉMOCRATE-CHRÉTIEN*/
+.UDC { fill: #044704 } /*UDC*/
+.FEM { fill: #000 } /*LALISTE-FEMMES 2018*/
+.LPG { fill: #000 } /*LA LISTE POUR GENÈVE*/
+.GEMA { fill: #000 } /*GENÈVE EN MARCHE*/
+.PBD { fill: #000 } /*PBD GENÈVE*/
+.MCG { fill: #cea106 } /*MCG*/
+.VERL { fill: #000 } /*VERT'LIBÉRAUX*/
+.LEE { fill: #000 } /*ÉGALITÉ ET ÉQUITÉ*/
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #D4D8DA;
+  stroke-width: 1px;
+  shape-rendering: crispEdges;
+}
+.x path {
+  display: none;
+}
+.barToolTip {
+  position: absolute;
+  display: none;
+  min-width: 80px;
+  height: auto;
+  background: none repeat scroll 0 0 #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 12px;
+  border-radius: 3px;
+  padding: 14px;
+  text-align: center;
+}
+/* END BAR GRAPH */
+
+/* PARLIAMENT */
+
+/* buttons */
+#parliamentToolbar button {
+  cursor: pointer;
+  border: none;
+  background: #3a7999;
+  color: #f2f2f2;
+  padding: 6px;
+  font-size: 14px;
+  margin-right: 4px;
+  border-radius: 5px;
+  position: relative;
+  box-sizing: border-box;
+  transition: all 500ms ease;
+}
+#parliamentToolbar button.pushed, #parliamentToolbar button:hover{
+	background: rgba(0,0,0,0);
+	color: #3a7999;
+	box-shadow: inset 0 0 0 3px #3a7999;
+}
+#parliamentToolbar button.pushed{
+  cursor: default;
+}
+
+/* table */
+td, th {
+  padding: 1px 8px;
+}
+td{
+  border-right: .5pt solid #ccc;
+  text-align: right;
+}
+th{
+  text-align: left;
+  background: #307ec3;
+  color: #fff;
+}
+table {
+  border-collapse: collapse;
+}
+tr{
+  border-bottom: .5pt solid #ccc;
+  margin-bottom: 2px;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  margin: 2px;
+}
+h2{
+  font-size: 18px;
+  clear: both;
+}
+body, text, button, select{
+  font-family: 'Montserrat', sans-serif;
+}
+.axis text {
+  font-size: 14px;
+}
+.axis text.textlabel{
+  text-anchor: start;
+  font-size: 14px;
+}
+.tooltip{
+  margin-left: -16px;
+  font-size: 14px;
+  padding: 10px;
+  width: 240px;
+  background: #fff;
+  opacity: 1;
+  position: absolute;
+  visibility: hidden;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 12px;
+  border-radius: 3px;
+  top: 171px;
+  left: 188px;
+}
+.credits{
+  clear: both;
+  font-size: 12px;
+  max-width: 600px;
+}
+
+svg .seat {
+    cursor: pointer;
+    /*transition: all 800ms;*/
+}
+
+/* Geneva */
+svg .seat.EAG { fill: #660c0c } /*ENSEMBLE À GAUCHE*/
+svg .seat.VERT { fill: #04aa04 } /*LES VERTS*/
+svg .seat.SOC { fill: #d65050 } /*LES SOCIALISTES*/
+svg .seat.PLR { fill: #3860f5 } /*LIBÉRAUX-RADICAUX*/
+svg .seat.PDC { fill: #d66306 } /*DÉMOCRATE-CHRÉTIEN*/
+svg .seat.UDC { fill: #044704 } /*UDC*/
+svg .seat.FEM { fill: #800080 } /*LALISTE-FEMMES 2018*/
+svg .seat.LPG { fill: #8e8 } /*LA LISTE POUR GENÈVE*/
+svg .seat.GEMA { fill: #aea106 } /*GENÈVE EN MARCHE*/
+svg .seat.PBD { fill: orange } /*PBD GENÈVE*/
+svg .seat.MCG { fill: #cea106 } /*MCG*/
+svg .seat.VERL { fill: #000 } /*VERT'LIBÉRAUX*/
+svg .seat.LEE { fill: #000 } /*ÉGALITÉ ET ÉQUITÉ*/
+/* END PARLIAMENT */
+
+
+/* MAP */
+div.separator{
+  width: 100%;
+  height: 10px;
+  box-shadow: 0 4px 2px -2px #D3D3D3;
+  margin-bottom: 1em;
+}
+div#mapContainerFullwidth{
+  width: 100%;
+  height: 400px;
+  /*box-shadow: 0 4px 2px -2px gray;
+  margin-bottom: 1em;*/
+}
+div#viz, div#panel{
+  float: left;
+}
+div#viz{
+  position: relative;
+}
+#toolbar{
+  position: absolute;
+  top: 2px;
+  left: 4px;
+}
+#panel{
+  width: 200px;
+  min-height: 160px;
+}
+#tooltip h3, #tooltip p{
+  margin: 6px 0 12px 0;
+}
+#legend{
+  max-width: 150px;
+  height: 160px;
+}
+#tooltip{
+  padding: 5px;
+}
+.commune{
+  fill: white;
+  stroke: #fff;
+}
+.swatch{
+  stroke: grey;
+}
+@media screen and (max-width: 640px) {
+  body{
+    margin: 2px;
+  }
+  #legend{
+    float: right;
+  }
+  #toolbar{
+    top: -3px;
+  }
+  .impressum{
+    margin-left: 0;
+  }
+}
+
+/* END MAP */
