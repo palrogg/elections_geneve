@@ -1,0 +1,51 @@
+[
+ {
+  "name": "Ensemble à Gauche",
+  "legend": "Ensemble à Gauche",
+  "seats": 9,
+  "seats_and_delta": 9,
+  "id": "EAG"
+ },
+ {
+  "name": "Les Socialistes",
+  "legend": "Les Socialistes",
+  "seats": 15,
+  "seats_and_delta": 15,
+  "id": "SOC"
+ },
+ {
+  "name": "Les Verts",
+  "legend": "Les Verts",
+  "seats": 10,
+  "seats_and_delta": 10,
+  "id": "VERT"
+ },
+ {
+  "name": "Parti Démocrate-Chrétien (PDC)",
+  "legend": "Parti Démocrate-Chrétien (PDC)",
+  "seats": 11,
+  "seats_and_delta": 11,
+  "id": "PDC"
+ },
+ {
+  "name": "PLR Les Libéraux-Radicaux Genève",
+  "legend": "PLR Les Libéraux-Radicaux Genève",
+  "seats": 24,
+  "seats_and_delta": 24,
+  "id": "PLR"
+ },
+ {
+  "name": "M.C.G. Mouvement Citoyens Genevois",
+  "legend": "M.C.G. Mouvement Citoyens Genevois",
+  "seats": 20,
+  "seats_and_delta": 20,
+  "id": "MCG"
+ },
+ {
+  "name": "UDC Genève",
+  "legend": "UDC Genève",
+  "seats": 11,
+  "seats_and_delta": 11,
+  "id": "UDC"
+ }
+]

@@ -1,0 +1,72 @@
+[
+ {
+  "sigle": "PLR",
+  "parti": "PLR - PDC - ENTENTE",
+  "name": "MAUDET Pierre",
+  "name2": "Pierre Maudet",
+  "value": 50180
+ },
+ {
+  "sigle": "MCG",
+  "parti": "MCG",
+  "name": "POGGIA Mauro",
+  "name2": "Mauro Poggia",
+  "value": 43728
+ },
+ {
+  "sigle": "PDC",
+  "parti": "PLR - PDC - ENTENTE",
+  "name": "DAL BUSCO Serge",
+  "name2": "Serge Dal Busco",
+  "value": 40836
+ },
+ {
+  "sigle": "VERT",
+  "parti": "LES VERTS",
+  "name": "HODGERS Antonio",
+  "name2": "Antonio Hodgers",
+  "value": 40754
+ },
+ {
+  "sigle": "SOC",
+  "parti": "LES SOCIALISTES",
+  "name": "EMERY-TORRACINTA Anne",
+  "name2": "Anne Emery-Torracinta",
+  "value": 33350
+ },
+ {
+  "sigle": "SOC",
+  "parti": "LES SOCIALISTES",
+  "name": "APOTHÉLOZ Thierry",
+  "name2": "Thierry Apothéloz",
+  "value": 32982
+ },
+ {
+  "sigle": "PLR",
+  "parti": "PLR - PDC - ENTENTE",
+  "name": "FONTANET Nathalie",
+  "name2": "Nathalie Fontanet",
+  "value": 31504
+ },
+ {
+  "sigle": "SOC",
+  "parti": "LES SOCIALISTES",
+  "name": "SALERNO Sandrine",
+  "name2": "Sandrine Salerno",
+  "value": 30016
+ },
+ {
+  "sigle": "PDC",
+  "parti": "PLR - PDC - ENTENTE",
+  "name": "BARTHASSAT Luc",
+  "name2": "Luc Barthassat",
+  "value": 27133
+ },
+ {
+  "sigle": "PLR",
+  "parti": "PLR - PDC - ENTENTE",
+  "name": "DE SENARCLENS Alexandre",
+  "name2": "Alexandre De Senarclens",
+  "value": 22820
+ }
+]

@@ -1,0 +1,79 @@
+[
+ {
+  "name2": "Mauro Poggia",
+  "value": 51015,
+  "sigle": "MCG",
+  "name": "Mauro Poggia",
+  "parti": "MCG"
+ },
+ {
+  "name2": "Serge Dal Busco",
+  "value": 50141,
+  "sigle": "PDC",
+  "name": "Serge Dal Busco",
+  "parti": "PLR - PDC - ENTENTE"
+ },
+ {
+  "name2": "Antonio Hodgers",
+  "value": 49684,
+  "sigle": "VERT",
+  "name": "Antonio Hodgers",
+  "parti": "SOCIALISTES-VERTS"
+ },
+ {
+  "name2": "Nathalie Fontanet",
+  "value": 45522,
+  "sigle": "PLR",
+  "name": "Nathalie Fontanet",
+  "parti": "PLR - PDC - ENTENTE"
+ },
+ {
+  "name2": "Anne Emery-Torracinta",
+  "value": 44905,
+  "sigle": "SOC",
+  "name": "Anne Emery-Torracinta",
+  "parti": "SOCIALISTES-VERTS"
+ },
+ {
+  "name2": "Thierry Apothéloz",
+  "value": 44884,
+  "sigle": "SOC",
+  "name": "Thierry Apothéloz",
+  "parti": "SOCIALISTES-VERTS"
+ },
+ {
+  "name2": "Luc Barthassat",
+  "value": 34357,
+  "sigle": "PDC",
+  "name": "Luc Barthassat",
+  "parti": "PLR - PDC - ENTENTE"
+ },
+ {
+  "name2": "Jocelyne Haller",
+  "value": 27121,
+  "sigle": "EAG",
+  "name": "Jocelyne Haller",
+  "parti": "ENSEMBLE À GAUCHE"
+ },
+ {
+  "name2": "Yves Nidegger",
+  "value": 23940,
+  "sigle": "UDC",
+  "name": "Yves Nidegger",
+  "parti": "UDC"
+ },
+ {
+  "name2": "Willy Cretegny",
+  "value": 20600,
+  "sigle": "PROM",
+  "name": "Willy Cretegny",
+  "parti": "PROSPÉRITÉ MAÎTRISÉE"
+ },
+ {
+  "name2": "Paul Sierre",
+  "value": 9428,
+  "sigle": "SAN",
+  "name": "Paul Sierre",
+  "parti": "SANTÉ !"
+ }
+]

@@ -1,0 +1,65 @@
+[
+ {
+  "pourcentage": 7.83,
+  "seats": 9,
+  "delta": 0,
+  "id": "EAG",
+  "name": "ENSEMBLE À GAUCHE",
+  "seats_and_delta": "9 (+0)",
+  "legend": "ENSEMBLE À GAUCHE"
+ },
+ {
+  "pourcentage": 15.3,
+  "seats": 17,
+  "delta": 2,
+  "id": "SOC",
+  "name": "LES SOCIALISTES",
+  "seats_and_delta": "17 (+2)",
+  "legend": "LES SOCIALISTES"
+ },
+ {
+  "pourcentage": 13.16,
+  "seats": 15,
+  "delta": 5,
+  "id": "VERT",
+  "name": "LES VERTS",
+  "seats_and_delta": "15 (+5)",
+  "legend": "LES VERTS"
+ },
+ {
+  "pourcentage": 10.71,
+  "seats": 12,
+  "delta": 1,
+  "id": "PDC",
+  "name": "DÉMOCRATE-CHRÉTIEN",
+  "seats_and_delta": "12 (+1)",
+  "legend": "PARTI DÉMOCRATE-CHRÉTIEN (PDC)"
+ },
+ {
+  "pourcentage": 25.18,
+  "seats": 28,
+  "delta": 4,
+  "id": "PLR",
+  "name": "LIBÉRAUX-RADICAUX",
+  "seats_and_delta": "28 (+4)",
+  "legend": "PLR. LES LIBÉRAUX-RADICAUX GENÈVE"
+ },
+ {
+  "pourcentage": 9.43,
+  "seats": 11,
+  "delta": -9,
+  "id": "MCG",
+  "name": "MCG",
+  "seats_and_delta": "11 (-9)",
+  "legend": "MCG - MOUVEMENT CITOYENS GENEVOIS"
+ },
+ {
+  "pourcentage": 7.32,
+  "seats": 8,
+  "delta": -3,
+  "id": "UDC",
+  "name": "UDC",
+  "seats_and_delta": "8 (-3)",
+  "legend": "UDC"
+ }
+]
