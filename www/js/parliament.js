@@ -1,10 +1,10 @@
 (function () {
 
-  //$('h2#parliamentTitle').text('Grand Conseil: résultats provisoires (19h30)')
+  /* Uncomment to bypass the
+  made for website with a very long cache (typically 1 hour on tdg.ch) */
+  // $('h2#parliamentTitle').text('Grand Conseil: résultats provisoires (19h30)')
+
   var tableExists = false;
-  var d = new Date();
-  var targetFile = "data/data-gc.json?time=" + d.getHours() + '_' + d.getMinutes();
-  console.log('Loading ' + targetFile + '...')
 
   // tooltip container
   tooltip = d3.select("body")
@@ -29,7 +29,7 @@
   }
 
   var parliament = d3.parliament().width(parliamentWidth).height(330).innerRadiusCoef(0.5);
-  parliament.enter.fromCenter(false).smallToBig(false);
+  parliament.enter.fromCenter(true).smallToBig(true);
   parliament.exit.toCenter(true).bigToSmall(true);
   parliament.on("mouseover",function(d){
     buildTooltip(d);
@@ -40,6 +40,11 @@
   parliament.on("mouseout", function(){
     tooltip.style("visibility", "hidden");
   });
+
+  /*
+    tabulate function by Lars Kotthoff
+    edited by Ray Waldin and me (Paul)
+  */
 
   function tabulate(data, columns, column_headers) {
       var table = d3.select('#tableContainer').append('table')
@@ -80,14 +85,20 @@
       }
   };
 
-
-
+  /* One-minute server cache (instead of 1 hour) to load fresh election data */
+  var d = new Date();
+  var targetFile = "data/data-gc.json?time=" + d.getHours() + '_' + d.getMinutes();
+  console.log('Loading ' + targetFile + '...')
   d3.json(targetFile, setData);
 
   $('#parliamentToolbar').append('<button class="pushed" id="load_2018">Résultats 2018</button><button id="load_2013" >Résultats 2013</button>')
 
+  setTimeout(function() { d3.json("data/data-gc-2013.json", setData); }, 5000)
+
   $('#load_2013').click(function(){
-    d3.json("data/data-gc-2013.json", setData);
+    setTimeout(function(){
+      d3.json("data/data-gc-2013.json", setData);
+    }, 1000);
     $('#parliamentToolbar button').toggleClass('pushed')
   });
 
@@ -96,26 +107,15 @@
 
     d3.json(targetFile, setData);
   });
+
   /* LEGEND */
-  // Legends section
   var colorDomain = [0.1, 1.1];
-
-  var threshold = d3.scaleThreshold()
-  .domain(colorDomain)
-  .range(['#cc4aa7', '#e3aed5', '#fff']);
-
-  d3.select("svg#parliament").append("g")
-  .attr("class", "legendordinal")
-  .attr("transform", "translate(30, 250)");
-
-  // partiColors
 
   var ordinal = d3.scaleOrdinal()
   .domain(['EAG', 'PS', 'Ve',
     'PDC', 'PLR', 'MCG', 'UDC' ])
   .range(['#660c0c', '#d65050', '#04aa04',
    '#d66306', '#3860f5', '#cea106' , '#044704']);
-
 
   var legendordinal = d3.legendColor()
   .shape('circle')
@@ -128,5 +128,4 @@
   d3.select("svg#parliament").select(".legendordinal")
   .call(legendordinal);
 
-  //# sourceURL=parliament.js
 })();

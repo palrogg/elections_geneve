@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600" rel="stylesheet">
+  <link href="css/style.css?9090901a" rel="stylesheet">
+  <style>
+  .rotate{
+    width: 40%;
+  	display: none;
+  }
+  @media screen and (max-width: 600px) and (orientation: portrait) {
+  	.rotate{
+  		display: block;
+  	}
+  }
+  </style>
+</head>
+<body>
+  <p><img class="rotate" src="img/noun_39168_cc.png" /></p>
+
+  <h2>Grand Conseil: résultats définitifs par commune</h2>
+  <!--<p>Avec 28% de participation, Chancy est la commune où le taux a été le plus bas, tandis que Bardonnex détient le record avec un taux de 51%.</p>-->
+
+  <div id="mapContainerFullwidth">
+    <div id="viz">
+      <div id="toolbar">
+        <form>
+
+          <select id="columnChoice">
+            <option value="parti_max">Parti en tête</option>
+            <option value="parti_max_2013">Parti en tête en 2013</option>
+            <option value="Participation">Participation</option>
+            <option value="101">ENSEMBLE À GAUCHE</option>
+            <option value="102">LES VERTS</option>
+            <option value="103">LES SOCIALISTES</option>
+            <option value="104">LIBÉRAUX-RADICAUX</option>
+            <option value="105">DÉMOCRATE-CHRÉTIEN</option>
+            <option value="106">UDC</option>
+            <option value="107">LALISTE-FEMMES 2018</option>
+            <option value="108">LA LISTE POUR GENÈVE</option>
+            <option value="109">GENÈVE EN MARCHE</option>
+            <option value="110">PBD GENÈVE</option>
+            <option value="111">MCG</option>
+            <option value="112">VERT'LIBÉRAUX</option>
+            <option value="113">ÉGALITÉ ET ÉQUITÉ</option>
+          </select>
+        </form>
+      </div>
+    </div>
+    <div id="panel">
+      <div id="legend"></div>
+      <div id="tooltip">
+        <h3>Détail par commune</h3>
+        <b>Survoler ou toucher du doigt une commune pour voir le détail</b>
+      </div>
+    </div>
+  </div>
+  <div class="separator"></div>
+
+  <h2 id="parliamentTitle" style="clear: both;">Grand Conseil, résultats définitifs</h2>
+  <div id="parliamentToolbar"></div>
+  <svg id="parliament"></svg>
+  <div id="tableContainer"></div>
+
+  <div class="separator"></div>
+
+
+  <h2 id="barTitle">Conseil d’Etat, résultats définitifs (18h40)</h2>
+  <svg id="bar" width="630" height="400"></svg>
+
+
+  <p class="credits">Source: <a target="_blank" href="https://www.ge.ch/elections/20180415/">Etat de Genève</a>, développement: <a target="_blank" href="https://twitter.com/palrogg">Paul Ronga</a></p>
+  <p class="credits">Librairies utilisées: <a target="_blank" href="https://d3js.org/">d3js</a>,
+    <a target="_blank" href="https://github.com/topojson/topojson">topojson</a>,
+    <a target="_blank" href="https://github.com/geoffreybr/d3-parliament">d3-parliament</a>,
+    <a target="_blank" href="http://d3-legend.susielu.com/">d3-legend</a>,
+    <a target="_blank" href="https://jquery.com/">jQuery</a>.
+    Icône (version mobile): Kelig Le Luron, <a target="_blank" href="https://thenounproject.com">The Noun Project</a></p>
+
+  <script src="lib/jquery-1.12.4.min.js"></script>
+  <script src="//files.newsnetz.ch/scripts/dimension_watcher.js"></script>
+  <script src="lib/d3.v4.min.js"></script>
+  <script src="lib/topojson.min.js"></script>
+  <script src="lib/d3-parliament.min.js" charset="utf-8"></script>
+  <script src="lib/d3-legend.min.js"></script>
+  <script src="js/parliament.js"></script>
+
+  <script>
+  var d = new Date();
+  var barScript = "js/bar.js?time=" + d.getHours() + '_' + d.getMinutes();
+  var parliamentScript = "js/parliament.js?time=" + d.getHours() + '_' + d.getMinutes();
+  var mapScript = "js/map.js?time=" + d.getHours() + '_' + d.getMinutes();
+/*
+  $.getScript( mapScript, function( data, textStatus, jqxhr ) {
+    console.log( textStatus ); // Success
+    console.log( "map.js was loaded." );
+  });
+
+  $.getScript( barScript, function( data, textStatus, jqxhr ) {
+    console.log( textStatus ); // Success
+    console.log( "bar.js was loaded." );
+  });
+
+  $.getScript( parliamentScript, function( data, textStatus, jqxhr ) {
+    console.log( textStatus ); // Success
+    console.log( "parliament.js was loaded." );
+  });
+*/
+  $(window).load(function(){
+    if($(window).width() < 960){
+      DimensionWatcher.enableParentNotification(
+        function() { return undefined },
+        function() { return $("body").height()+30 }
+      );
+    }
+  });
+</script>
+
+
+</body>
+</html>

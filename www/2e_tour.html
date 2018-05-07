@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600" rel="stylesheet">
+  <link href="css/style.css?9090901a" rel="stylesheet">
+  <style>
+  .rotate{
+    width: 40%;
+  	display: none;
+  }
+  .commune{
+    fill: white;
+    stroke: #000;
+    stroke-width: .2pt;
+  }
+  .option_r1_only{
+    display: none;
+  }
+
+  /* BAR GRAPH */
+
+  .EAG { fill: #990c0c } /*ENSEMBLE À GAUCHE*/
+  .VERT { fill: #04aa04 } /*LES VERTS*/
+  .SOC { fill: #d65050 } /*LES SOCIALISTES*/
+  .PLR { fill: #3860f5 } /*LIBÉRAUX-RADICAUX*/
+  .PDC { fill: #d66306 } /*DÉMOCRATE-CHRÉTIEN*/
+  .UDC { fill: #066306 } /*UDC*/
+  .FEM { fill: #000 } /*LALISTE-FEMMES 2018*/
+  .LPG { fill: #000 } /*LA LISTE POUR GENÈVE*/
+  .GEMA { fill: #000 } /*GENÈVE EN MARCHE*/
+  .PBD { fill: #000 } /*PBD GENÈVE*/
+  .MCG { fill: #cea106 } /*MCG*/
+  .VERL { fill: #000 } /*VERT'LIBÉRAUX*/
+  .LEE { fill: #000 } /*ÉGALITÉ ET ÉQUITÉ*/
+
+  /* ROUND 2 */
+  .PROM { fill: #9a3e5f }
+  .SAN { fill: #17b2e1 } /* 00FFEF */
+
+
+  /* LINE GRAPH */
+  .line {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 2px;
+  }
+  .textLabel{
+    font-size: 12px;
+  }
+
+  /* add legacy max-device-width for live embed */
+  @media screen and (max-width: 600px) and (max-device-width: 600px) and (orientation: portrait) {
+  	.rotate{
+  		display: block;
+  	}
+  }
+  </style>
+</head>
+<body>
+  <p><img class="rotate" src="img/noun_39168_cc.png" /></p>
+
+  <h2>Conseil d’Etat: résultats définitifs par commune</h2>
+
+  <div id="mapContainerFullwidth">
+    <div id="viz">
+      <div id="toolbar">
+        <form>
+
+          <select id="columnChoice">
+            <option value="participation">Participation</option>
+            <option value="20001" class="option_r1_only">Salika Wenger (ENSEMBLE À GAUCHE)</option>
+            <option value="20002" > Jocelyne Haller (ENSEMBLE À GAUCHE)</option>
+            <option value="20003" > Anne Emery-Torracinta (LES SOCIALISTES)</option>
+            <option value="20004" > Thierry Apothéloz (LES SOCIALISTES)</option>
+            <option value="20005" class="option_r1_only"> Sandrine Salerno (LES SOCIALISTES)</option>
+            <option value="20006" > Antonio Hodgers (LES VERTS)</option>
+            <option value="20007" class="option_r1_only"> Marjorie De Chastonay (LES VERTS)</option>
+            <option value="20008" class="option_r1_only"> Yvan Rochat (LES VERTS)</option>
+            <option value="20009" > Mauro Poggia (MCG)</option>
+            <option value="20010" class="option_r1_only"> Belen Roch Ana (MCG)</option>
+            <option value="20011" class="option_r1_only"> Daniel Sormanni (MCG)</option>
+            <option value="20012" class="option_r1_only"> Pierre Maudet (PLR - PDC - ENTENTE)</option>
+            <option value="20013" > Serge Dal Busco (PLR - PDC - ENTENTE)</option>
+            <option value="20014" > Luc Barthassat (PLR - PDC - ENTENTE)</option>
+            <option value="20015" > Nathalie Fontanet (PLR - PDC - ENTENTE)</option>
+            <option value="20016" class="option_r1_only"> Alexandre De Senarclens (PLR - PDC - ENTENTE)</option>
+            <option value="20017" class="option_r1_only"> Axel Amberger (RIEN PAS GRAND CHOSE)</option>
+            <option value="20018" class="option_r1_only"> Jean Burgermeister (ENSEMBLE À GAUCHE)</option>
+            <option value="20019" > Yves Nidegger (UDC)</option>
+            <option value="20020" class="option_r1_only"> Thomas Bläsi (UDC)</option>
+            <option value="20021" class="option_r1_only"> Stéphane Florey (UDC)</option>
+            <option value="20022" class="option_r1_only"> Eric Stauffer (GENÈVE EN MARCHE)</option>
+            <option value="20023" class="option_r1_only"> Ronald Zacharias (GENÈVE EN MARCHE)</option>
+            <option value="20024" > Willy Cretegny (PROSPÉRITÉ MAÎTRISÉE)</option>
+            <option value="20025" > Paul Aymon (SANTÉ)</option>
+            <option value="20026" class="option_r1_only"> Magali Orsini (LA LISTE POUR GENÈVE)</option>
+            <option value="20027" class="option_r1_only"> Pierre Gauthier (LA LISTE POUR GENÈVE)</option>
+            <option value="20028" class="option_r1_only"> Thierry Vidonne (PBD GENÈVE)</option>
+            <option value="20029" class="option_r1_only"> André Leitner (PBD GENÈVE)</option>
+            <option value="20030" class="option_r1_only"> Jérôme Fontana (VERT'LIBÉRAUX)</option>
+            <option value="20031" class="option_r1_only"> Susanne Amsler (VERT'LIBÉRAUX)</option>
+
+          </select>
+          <select id="roundChoice">
+            <option value="r1">Premier tour</option>
+            <option value="r2" selected>Second tour</option>
+          </select>
+        </form>
+      </div>
+    </div>
+    <div id="panel">
+      <div id="legend"></div>
+      <div id="tooltip">
+        <h3>Détail par commune</h3>
+        <b>Survoler ou toucher du doigt une commune pour voir le détail</b>
+      </div>
+    </div>
+  </div>
+
+  <div class="separator"></div>
+
+  <h2 id="barTitle">Conseil d’Etat</h2>
+  <p>Pierre Maudet a été élu avec 50 180 suffrages lors du premier tour.</p>
+  <svg id="bar" width="630" height="400"></svg>
+
+  <div class="separator"></div>
+
+  <h2 id="evolutionTitle">Evolution du taux de participation</h2>
+  <div id="evolution"></div>
+
+
+  <p class="credits">Source: <a target="_blank" href="https://www.ge.ch/elections/20180415/">Etat de Genève</a> et <a href="https://www.ge.ch/statistique/" target="_blank">OCStat</a>, développement: <a target="_blank" href="https://twitter.com/palrogg">Paul Ronga</a></p>
+  <p class="credits">Librairies utilisées: <a target="_blank" href="https://d3js.org/">d3js</a>,
+    <a target="_blank" href="https://github.com/topojson/topojson">topojson</a>,
+    <a target="_blank" href="http://d3-legend.susielu.com/">d3-legend</a>,
+    <a target="_blank" href="https://jquery.com/">jQuery</a>.
+    Icône (version mobile): Kelig Le Luron, <a target="_blank" href="https://thenounproject.com">The Noun Project</a></p>
+
+  <script src="lib/jquery-1.12.4.min.js"></script>
+  <script src="//files.newsnetz.ch/scripts/dimension_watcher.js"></script>
+  <script src="lib/d3.v4.min.js"></script>
+  <script src="lib/topojson.min.js"></script>
+  <script src="lib/d3-parliament.min.js" charset="utf-8"></script>
+  <script src="lib/d3-legend.min.js"></script>
+
+  <script>
+  var d = new Date();
+  var barScript = "js/bar.js?time=" + d.getHours() + '_' + d.getMinutes();
+  var parliamentScript = "js/parliament.js?time=" + d.getHours() + '_' + d.getMinutes();
+  var mapScript = "js/map_ce.js?time=" + d.getHours() + '_' + d.getMinutes();
+
+  $.getScript( mapScript, function( data, textStatus, jqxhr ) {
+    console.log( textStatus ); // Success
+    console.log( "map.js was loaded." );
+  });
+
+  var barScript = "js/bar_2.js?time=" + d.getHours() + '_' + d.getMinutes();
+
+  $.getScript( barScript, function( data, textStatus, jqxhr ) {
+    console.log( textStatus ); // Success
+    console.log( "bar_2.js was loaded." );
+  });
+
+  var evolutionScript = "js/evolution_wide.js?time=" + d.getHours() + '_' + d.getMinutes();
+
+  $.getScript( evolutionScript, function( data, textStatus, jqxhr ) {
+    console.log( textStatus ); // Success
+    console.log( "evolution.js was loaded." );
+  });
+
+  $(window).load(function(){
+    if($(window).width() < 960){
+      DimensionWatcher.enableParentNotification(
+        function() { return undefined },
+        function() { return $("body").height()+30 }
+      );
+    }
+  });
+</script>
+
+
+</body>
+</html>
